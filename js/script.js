@@ -12,22 +12,38 @@ function unlockAndGenerate() {
     let submit = document.querySelector('#submit');
     let username = document.querySelector('#username');
     let score = 0;
+    const scoreArray = [];
     const usernameValue = [];
     let user = document.querySelectorAll('.username');
     let scr = document.querySelectorAll('.score');
     let z = -1;
     let i = 0;
+    let y = -1;
 
     submit.addEventListener('click', function(event) {
         event.preventDefault();
         usernameValue.push(username.value);
         username.value = '';
         z += 1;
+        y += 1;
         if(z === 4) {
             z = 3;
-            user[z].style.color = 'black';
-            scr[z].style.color = 'black';
+            scoreArray.shift();
+            scoreArray.push(0);
+
+            for(let m = 1; m <= user.length - 1; m++) {
+                const userStyle = getComputedStyle(user[m]);
+                let userColor = userStyle.color;
+                user[m-1].style.color = `${userColor}`;
+                scr[m-1].style.color = `${userColor}`;
+            }
         }
+
+        for (let l = 0; l < scoreArray.length; l++) {
+
+            scr[l].innerHTML = `${scoreArray[l]}`;
+        }
+
         for (; i < usernameValue.length; i++) {
 
             if(usernameValue.length > 4) {
@@ -39,7 +55,6 @@ function unlockAndGenerate() {
             }
 
             user[i].innerHTML = `${usernameValue[i]}`;
-            scr[i].innerHTML = 0;
         }
     })
 
@@ -118,41 +133,50 @@ function unlockAndGenerate() {
                 let bckCol = style.backgroundColor;
                 const style2 = getComputedStyle(thirdContainer);
                 let vis = style2.visibility;
-                if (generatedColorCodeRGB !== bckCol) {
-                    if(vis === 'visible') {
-                        score += 0;
-                        colorField[i].style.animation = 'scaleDown .5s linear forwards';
+                    if (generatedColorCodeRGB !== bckCol) {
+                        if(vis === 'visible') {
+                            score += 0;
+                            colorField[i].style.animation = 'scaleDown .5s linear forwards';
+                        }
+    
+                        else {
+                        colorField[i].style.animation = 'disappear .5s linear forwards';
+                        score += 1;
+                        scr[z].innerHTML = `${score}`; 
+                        }
+    
+                        if (score === 5) {
+                            user[z].style.color = 'green';
+                            scr[z].style.color = 'green';
+                        }
+                        
+                        else {
+                            user[z].style.color = 'red';
+                            scr[z].style.color = 'red';
+                        }
                     }
+                    else {
+                        thirdContainer.style.visibility = 'visible';
+                        if (score === 5) {
+                            user[z].style.color = 'green';
+                            scr[z].style.color = 'green';
+                        }
+                        
+                        else {
+                            user[z].style.color = 'red';
+                            scr[z].style.color = 'red';
+                        }
 
-                    else {
-                    colorField[i].style.animation = 'disappear .5s linear forwards';
-                    score += 1;
-                    scr[z].innerHTML = `${score}`; 
+                        if(y === 4) {
+                            scoreArray[scoreArray.length - 1] = score;
+                            score = 0;
+                            y = 3;
+                        }
+                        else {
+                            scoreArray.push(score);
+                            score = 0;
+                        }
                     }
-
-                    if (score === 5) {
-                        user[z].style.color = 'green';
-                        scr[z].style.color = 'green';
-                    }
-                    
-                    else {
-                        user[z].style.color = 'red';
-                        scr[z].style.color = 'red';
-                    }
-                }
-                else {
-                    thirdContainer.style.visibility = 'visible';
-                    if (score === 5) {
-                        user[z].style.color = 'green';
-                        scr[z].style.color = 'green';
-                    }
-                    
-                    else {
-                        user[z].style.color = 'red';
-                        scr[z].style.color = 'red';
-                    }
-                    score = 0;
-                }
             }, {once: true})
         }
     })
@@ -222,20 +246,57 @@ function unlockAndGenerate() {
         convertedFromHEXtoRGBString += convertedFromHEXtoRGBObj.g + ', ';
         convertedFromHEXtoRGBString += convertedFromHEXtoRGBObj.b + ')';
 
-        console.log(convertedFromHEXtoRGBString);
-
         for(let i = 0; i < colorField.length; i++) {
-            colorField[i].addEventListener('click', function() {
-
+            colorField[i].addEventListener('click', function () {
                 const style = getComputedStyle(colorField[i]);
                 let bckCol = style.backgroundColor;
-                if (convertedFromHEXtoRGBString !== bckCol) {
-                    colorField[i].style.animation = 'disappear .5s linear forwards';
-                }
-                else {
-                    thirdContainer.style.visibility = 'visible';
-                }
-            })
+                const style2 = getComputedStyle(thirdContainer);
+                let vis = style2.visibility;
+                    if (convertedFromHEXtoRGBString !== bckCol) {
+                        if(vis === 'visible') {
+                            score += 0;
+                            colorField[i].style.animation = 'scaleDown .5s linear forwards';
+                        }
+    
+                        else {
+                        colorField[i].style.animation = 'disappear .5s linear forwards';
+                        score += 1;
+                        scr[z].innerHTML = `${score}`; 
+                        }
+    
+                        if (score === 5) {
+                            user[z].style.color = 'green';
+                            scr[z].style.color = 'green';
+                        }
+                        
+                        else {
+                            user[z].style.color = 'red';
+                            scr[z].style.color = 'red';
+                        }
+                    }
+                    else {
+                        thirdContainer.style.visibility = 'visible';
+                        if (score === 5) {
+                            user[z].style.color = 'green';
+                            scr[z].style.color = 'green';
+                        }
+                        
+                        else {
+                            user[z].style.color = 'red';
+                            scr[z].style.color = 'red';
+                        }
+
+                        if(y === 4) {
+                            scoreArray[scoreArray.length - 1] = score;
+                            score = 0;
+                            y = 3;
+                        }
+                        else {
+                            scoreArray.push(score);
+                            score = 0;
+                        }
+                    }
+            }, {once: true})
         }
     })
 }
