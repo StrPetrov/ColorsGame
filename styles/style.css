@@ -1,0 +1,265 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  overflow: hidden;
+}
+
+.main_container {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(216, 212, 212);
+}
+.main_container .main_container_first_section {
+  width: 100%;
+  height: auto;
+  padding-bottom: 50px;
+  border-bottom: 5px solid black;
+  display: flex;
+}
+.main_container .main_container_first_section .main_container_first_section_left {
+  flex: 30%;
+}
+.main_container .main_container_first_section .main_container_first_section_left form #username {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 400px;
+  height: 80px;
+  border: 3px solid gray;
+  border-radius: 50px;
+  font-size: 37px;
+  color: gray;
+  text-align: center;
+}
+.main_container .main_container_first_section .main_container_first_section_left form #submit {
+  display: block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 180px;
+  height: 50px;
+  border: 3px solid gray;
+  border-radius: 25px;
+  color: gray;
+  font-size: 25px;
+  cursor: pointer;
+  background-color: white;
+  font-weight: bold;
+}
+.main_container .main_container_first_section .main_container_first_section_left form #submit:hover {
+  background-color: rgb(235, 230, 230);
+  transition: 0.5s ease-out;
+}
+.main_container .main_container_first_section .main_container_first_section_middle {
+  flex: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_container .main_container_first_section .main_container_first_section_middle .generated_color_code {
+  width: 70%;
+  height: 150px;
+  border: 3px solid gray;
+  border-radius: 100px;
+  display: table;
+  font-size: 50px;
+  background-color: white;
+  color: gray;
+}
+.main_container .main_container_first_section .main_container_first_section_middle .generated_color_code span {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.main_container .main_container_first_section .main_container_first_section_right {
+  flex: 30%;
+}
+.main_container .main_container_first_section .main_container_first_section_right .unlock_generators {
+  width: 60%;
+  height: 50px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 30px;
+  border: 3px solid gray;
+  border-radius: 25px;
+  display: table;
+  background-color: white;
+  color: gray;
+  cursor: pointer;
+}
+.main_container .main_container_first_section .main_container_first_section_right .unlock_generators:hover {
+  background-color: rgb(235, 230, 230);
+  transition: 0.5s ease-out;
+}
+.main_container .main_container_first_section .main_container_first_section_right .unlock_generators span {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.main_container .main_container_first_section .main_container_first_section_right .generators {
+  display: flex;
+  opacity: 0;
+}
+.main_container .main_container_first_section .main_container_first_section_right .generators .rgb_generator {
+  width: 150px;
+  height: 70px;
+  border: 3px solid gray;
+  border-radius: 25px;
+  margin-top: 0px;
+  margin-left: 10%;
+  background-color: white;
+  color: gray;
+  font-size: 25px;
+  display: table;
+  cursor: pointer;
+}
+.main_container .main_container_first_section .main_container_first_section_right .generators .rgb_generator:hover {
+  background-color: rgb(235, 230, 230);
+  transition: 0.5s ease-out;
+}
+.main_container .main_container_first_section .main_container_first_section_right .generators .rgb_generator span {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.main_container .main_container_first_section .main_container_first_section_right .generators .hex_generator {
+  width: 150px;
+  height: 70px;
+  border: 3px solid gray;
+  border-radius: 25px;
+  margin-top: 0px;
+  margin-left: 25%;
+  background-color: white;
+  color: gray;
+  font-size: 25px;
+  display: table;
+  cursor: pointer;
+}
+.main_container .main_container_first_section .main_container_first_section_right .generators .hex_generator:hover {
+  background-color: rgb(235, 230, 230);
+  transition: 0.5s ease-out;
+}
+.main_container .main_container_first_section .main_container_first_section_right .generators .hex_generator span {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.main_container .main_container_second_section {
+  width: 100%;
+  height: 350px;
+  border-bottom: 5px solid black;
+  display: flex;
+  opacity: 0;
+}
+.main_container .main_container_second_section .main_container_second_section_left {
+  flex: 33.333%;
+}
+.main_container .main_container_second_section .main_container_second_section_left .offeredColor {
+  width: 80%;
+  height: 100px;
+  border: 3px solid gray;
+  border-radius: 50px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+.main_container .main_container_second_section .main_container_second_section_middle {
+  flex: 33.333%;
+}
+.main_container .main_container_second_section .main_container_second_section_middle .offeredColor {
+  width: 80%;
+  height: 100px;
+  border: 3px solid gray;
+  border-radius: 50px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+.main_container .main_container_second_section .main_container_second_section_right {
+  flex: 33.333%;
+}
+.main_container .main_container_second_section .main_container_second_section_right .offeredColor {
+  width: 80%;
+  height: 100px;
+  border: 3px solid gray;
+  border-radius: 50px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+.main_container .main_container_third_section {
+  text-align: center;
+  font-size: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  visibility: hidden;
+}
+.main_container .main_container_forth_section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.main_container .main_container_forth_section .username_and_score {
+  flex: 20%;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.main_container .main_container_forth_section .username_and_score p {
+  margin-top: 40px;
+  font-size: 40px;
+  font-weight: bold;
+}
+.main_container .main_container_forth_section .box1 {
+  flex: 20%;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  text-align: center;
+}
+.main_container .main_container_forth_section .box1 p {
+  margin-top: 40px;
+  font-size: 40px;
+  font-weight: bold;
+}
+.main_container .main_container_forth_section .box2 {
+  flex: 20%;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  text-align: center;
+}
+.main_container .main_container_forth_section .box2 p {
+  margin-top: 40px;
+  font-size: 40px;
+  font-weight: bold;
+}
+.main_container .main_container_forth_section .box3 {
+  flex: 20%;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  text-align: center;
+}
+.main_container .main_container_forth_section .box3 p {
+  margin-top: 40px;
+  font-size: 40px;
+  font-weight: bold;
+}
+.main_container .main_container_forth_section .box4 {
+  flex: 20%;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  text-align: center;
+}
+.main_container .main_container_forth_section .box4 p {
+  margin-top: 40px;
+  font-size: 40px;
+  font-weight: bold;
+}/*# sourceMappingURL=style.css.map */

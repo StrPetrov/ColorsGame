@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the color</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/keyframes.css">
+</head>
+<body>
+    <div class="main_container">
+        <div class="main_container_first_section">
+            <div class="main_container_first_section_left">
+                <form action="#" id="form">
+                    <input type="text" name="username" id="username" placeholder="Enter your username..." autofocus>
+                    <input type="submit" value="Confirm" id="submit">
+                </form>
+            </div>
+            <div class="main_container_first_section_middle">
+                <div class="generated_color_code">
+                </div>
+            </div>
+            <div class="main_container_first_section_right">
+                <div class="unlock_generators">
+                    <span>Unlock color generators!</span>
+                </div>
+                <div class="generators">
+                    <div class="rgb_generator"><span>RGB</span></div>
+                    <div class="hex_generator"><span>HEX</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="main_container_second_section">
+            <div class="main_container_second_section_left">
+                <div class="offeredColor" id="c1"></div>
+                <div class="offeredColor" id="c2"></div>
+            </div>
+            <div class="main_container_second_section_middle">
+                <div class="offeredColor" id="c3"></div>
+                <div class="offeredColor" id="c4"></div>
+            </div>
+            <div class="main_container_second_section_right">
+                <div class="offeredColor" id="c5"></div>
+                <div class="offeredColor" id="c6"></div>
+            </div>
+        </div>
+        <div class="main_container_third_section">
+            Game over! Click on the rest of colors, then click here to play again.
+        </div>
+        <div class="main_container_forth_section">
+            <div class="username_and_score">
+                <p>Username:</p>
+                <p>Score:</p>
+            </div>
+            <div class="box1">
+                <p class="username"></p>
+                <p class="score"></p>
+            </div>
+            <div class="box2">
+                <p class="username"></p>
+                <p class="score"></p>
+            </div>
+            <div class="box3">
+                <p class="username"></p>
+                <p class="score"></p>
+            </div>
+            <div class="box4">
+                <p class="username"></p>
+                <p class="score"></p>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
