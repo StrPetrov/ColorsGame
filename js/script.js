@@ -38,6 +38,8 @@ function unlockAndGenerate() {
                 scr[m-1].style.color = `${userColor}`;
             }
         }
+        scr[z].style.color = 'black';
+        user[z].style.color = 'black';
 
         for (let l = 0; l < scoreArray.length; l++) {
 
